@@ -73,6 +73,15 @@ WordPressのインストール
 
     rpm -q php-mysql
     yum -y install php-mysql
+    wget http://ja.wordpress.org/wordpress-3.9.1-ja.tar.gz
+    tar -xzvf latest.tar.gz
+    mv wordpress/ /var/www/html/wpress
+    chmod 777 /var/www/html/wpress
+    chown -R tu:apache /var/www/html/wpress/
+    mkdir /var/www/html/wpress/wp-content/uploads
+    mkdir /var/www/html/wpress/wp-content/upgrade
+    chmod -R 777 /var/www/html/wpress/wp-content
+    rm -f wordpress-3.9.1-ja.tar.gz
 
 SELinuxが有効な場合
 
