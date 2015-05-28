@@ -6,43 +6,54 @@ Vagrant用のディレクトリを作成してCentOS boxを用意してその中
     mkdir CentOS
     vagrant box add BOX名 BOXのURL
 
-Vagrantfileの作成
+Vagrantfileの作成   
     vagrant init
 
-Vagrantfileの編集
+Vagrantfileの編集   
     Vagrant.configure(2) do |config|
+
     config.vm.box = "BOX名"
+
     config.vm.network "private_network", ip:"xxx.xxx.xxx.xxx"
 
 ## 2-2 Wordpressを動かす(2)
 
-### PHPのインストール
+### PHPのインストールとバージョンの確認
 
     yum -y install php-mysql php php-gd php-mbstring php-fpm
+
     php --version
 
 ### /etc/php-fpm.d/www.confを編集。以下を追加または、変更。
 
     listen = 127.0.0.9000
+
     listen.allowed_clients = 127.0.0.1
+
     user = nginx
+
     group = nginx
+
     pm = static
 
 ### デーモンの起動
 
     systemctl start php-fpm.service
+
     systemctl enable php-fpm.service
 
 ### mariadb(mysql)のインストール
 
     yum -y install mariadb mariadb-server
+
     systemctl start mariadb.service
+
     systemctl enable mariadb.service
 
 ### [公式サイト](http://nginx.org/en/linux_packages.html#stable)からリポジトリ追加用のrpmをダウンロードしてインストール
 
     wget rpmパッケージURL
+
     rpm -ivh rpmパッケージ名
 
 ### nginxのインストール
@@ -54,14 +65,19 @@ Vagrantfileの編集
 #### ホームディレクトリに'wordpress.sql'を作成する
 
     set password for root@localhost=password('roothoge');
+
     insert into user set user="ユーザー名", password=password("パスワード"), host="localhost";
+
     create database データベース名;
+
     grant all on データベース名.* to hoge;
+
     FLUSH PRIVILEGES;
 
 #### データベースの確認
 
     mysql -uroot -Dmysql < wordpress.sql
+
     mysql -uroot -pパスワード
 
 MariaDBにログイン出来ることを確認したら
@@ -79,14 +95,19 @@ MariaDBにログイン出来ることを確認したら
 ### 念のための処置
 
     systemctl stop httpd.service
+
     systemctl disable httpd.service
+
     sudo systemctl restart madiadb.service nginx php-fpm
+
     systemctl enable nginx.service
 
 ### ログ出力ディレクトリの作成
 
     mkdir -p /var/log/nginx/www.example.com
+
     chown nginx: /var/log/nginx/www.example.com
+
     chmod +r+w /var/log/nginx/www.example.com
 
 ### /etc/nginx/conf.d/default.confの編集
@@ -99,7 +120,9 @@ MariaDBにログイン出来ることを確認したら
 ### Wordpressのインストール
 
     wget http://wordpress.org/latest.tar.gz
+
     tar -xzvf latest.tar.gz
+
     mv wordpress default.confで設定したパス
 
 ブラウザでの表示の確認をする
@@ -109,11 +132,16 @@ MariaDBにログイン出来ることを確認したら
 ### apache2.2のインストール
 
     yum -y install wget gcc openssl openssl-devel
+
     wget http://ftp.kddilabs.jp/infosystems/apache//httpd/httpd-2.2.29.tar.gz
     tar zxvf ./httpd-2.2.29.tar.gz
+
     cd ./httpd-2.2.29
+
     ./configure --enable-suexec
+
     make
+
     make install
 
 ### Apacheの起動
@@ -159,7 +187,7 @@ MariaDBにログイン出来ることを確認したら
       SetHandler application/x-httpd-php
     </FilesMatch>
 
-index.phpを追加する
+index.phpを追加する   
     <IfModule dir_module>
         DirectoryIndex index.html index.php
     </IfModule>
