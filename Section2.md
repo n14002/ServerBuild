@@ -216,7 +216,7 @@ MariaDBにログイン出来ることを確認したら
 
 ## 2-4 ベンチマークを取る
 
-### adコマンドのインストール
+### abコマンドのインストール
 
     sudo apt-get install apache2-utils
 
@@ -243,7 +243,7 @@ MariaDBにログイン出来ることを確認したら
 
     unzip wp-super-cache.1.4.4.zip
      
-    mv wp-super-cache.1.4.4.zip /usr/local/apache2/htdocs/wordpress/wp-content/plugins/
+    mv wp-super-cache.1.4.4 /usr/local/apache2/htdocs/wordpress/wp-content/plugins/
 
 ### '/usr/local/lib/php.ini'の編集
 
@@ -265,8 +265,8 @@ Wordpressでプラグインを有効にして、ベンチマークを実行
     
 #### プラグイン導入後
 
-Connection Times (ms)
-    min  mean[+/-sd] median   max
+    Connection Times (ms)   
+    min  mean[+/-sd] median   max   
     Connect:        1    1   0.2      1       1
     Processing:  2401 2583  75.5   2619    2635
     Waiting:     2311 2457  86.5   2468    2613
