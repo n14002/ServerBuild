@@ -2,14 +2,14 @@
 
 ## 2-1 Vagrantを使用したCentOS7環境の起動
 
-Vagrant用のディレクトリを作成してCentOS boxを用意してその中で作業をする
+###Vagrant用のディレクトリを作成してCentOS boxを用意してその中で作業をする
     mkdir CentOS
     vagrant box add BOX名 BOXのURL
 
-Vagrantfileの作成   
+####Vagrantfileの作成   
     vagrant init
 
-Vagrantfileの編集   
+####Vagrantfileの編集   
     Vagrant.configure(2) do |config|
 
     config.vm.box = "BOX名"
@@ -24,7 +24,7 @@ Vagrantfileの編集
 
     php --version
 
-### /etc/php-fpm.d/www.confを編集。以下を追加または、変更。
+### '/etc/php-fpm.d/www.conf'を編集。以下を追加または、変更。
 
     listen = 127.0.0.9000
 
@@ -174,12 +174,12 @@ MariaDBにログイン出来ることを確認したら
 
     cp php.ini-development /usr/local/lib/php.ini
 
-### php.iniの編集
+### '/usr/local/lib/php.ini'の編集
 
    mysql.default_socket = /var/lib/mysql/mysql.sock
 
 
-### /usr/local/apache2/conf/httpd.confの編集
+### '/usr/local/apache2/conf/httpd.conf'の編集
 
     ServerName ユーザー名
 
@@ -245,7 +245,7 @@ index.phpを追加する
      
     mv wp-super-cache.1.4.4.zip /usr/local/apache2/htdocs/wordpress/wp-content/plugins/
 
-### /usr/local/lib/php.iniの編集
+### '/usr/local/lib/php.ini'の編集
 
     mysql.default
      
