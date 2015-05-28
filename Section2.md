@@ -187,9 +187,9 @@ MariaDBにログイン出来ることを確認したら
       SetHandler application/x-httpd-php
     </FilesMatch>
 
-index.phpを追加する   
-    <IfModule dir_module>
-        DirectoryIndex index.html index.php
+### index.phpを追加する   
+    <IfModule dir_module>   
+        DirectoryIndex index.html index.php   
     </IfModule>
 
 
@@ -247,7 +247,7 @@ index.phpを追加する
 
 ### '/usr/local/lib/php.ini'の編集
 
-    mysql.default
+    mysql.default_socket = /var/lib/mysql/mysql.sock
      
 Wordpressでプラグインを有効にして、ベンチマークを実行
 
