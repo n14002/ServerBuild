@@ -101,21 +101,21 @@ AMIMOTOのWordpressを起動してWordpressが見れることを確認する。
 ab -n 100 -c 10
 
 EC2側
-    Connection Times (ms)
-    min  mean[+/-sd] median   max
-    Connect:       36   48   6.6     48      59
-    Processing:   847 11312 6767.6  11349   23658
-    Waiting:      775 11215 6838.9  11349   23658
-    Total:        884 11360 6772.0  11405   23710
+    Connection Times (ms)   
+    min  mean[+/-sd] median   max   
+    Connect:       36   48   6.6     48      59   
+    Processing:   847 11312 6767.6  11349   23658   
+    Waiting:      775 11215 6838.9  11349   23658   
+    Total:        884 11360 6772.0  11405   23710   
 
 
 Cloud Front側
-    Connection Times (ms)
-    min  mean[+/-sd] median   max
-    Connect:       29   42   7.0     43      54
-    Processing:    77   98   9.7     98     116
-    Waiting:       75   92   8.2     92     109
-    Total:        131  140   3.5    140     146
+    Connection Times (ms)   
+    min  mean[+/-sd] median   max   
+    Connect:       29   42   7.0     43      54   
+    Processing:    77   98   9.7     98     116   
+    Waiting:       75   92   8.2     92     109   
+    Total:        131  140   3.5    140     146   
 
 ## 6-6 RDS(ここから下はまだしてないです)
 
