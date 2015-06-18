@@ -97,6 +97,9 @@ AMIMOTOのWordpressを起動してWordpressが見れることを確認する。
 
 ### ベンチマークをとる
 
+同時接続100 実行回数100
+ab -n 100 -c 10
+
 EC2側
     Connection Times (ms)
     min  mean[+/-sd] median   max
