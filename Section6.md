@@ -11,7 +11,7 @@
 
 [公式サイト](http://aws.amazon.com/jp/cli/)参照。
 
-### awsコマンドのインストール(s13003のgithubをみる)
+### awsコマンドのインストール
 
     sudo apt-get install python-pip
 
