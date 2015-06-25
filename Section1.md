@@ -2,7 +2,7 @@
 
 ##VirtualBoxへのインストール
 
-CentOSの公式サイトから[https://www.centos.org/]Minimal ISO(x86_64)のISOファイルをダウンロード。
+CentOSの公式サイトから[https://www.centos.org/] Minimal ISO(x86_64)のISOファイルをダウンロード。
 
 ViratualBoxを起動して[新規]を選択。
 名前やメモリ、容量を設定して起動する。Minimal ISO(x86_64)を選択しインストール完了。
