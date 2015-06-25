@@ -2,7 +2,7 @@
 
 ##VirtualBoxへのインストール
 
-[CentOSの公式サイト](https://www.centos.org/)からMinimal ISO(x86_64)のISOファイルをダウンロード。
+[CentOSの公式サイト](https://www.centos.org/)からGet CentOS Now →  Minimal ISO(x86_64)のISOファイルをダウンロード。
 
 ViratualBoxを起動して[新規]を選択。
 名前やメモリ、容量を設定して起動する。Minimal ISO(x86_64)を選択しインストール完了。
@@ -18,7 +18,7 @@ ViratualBoxを起動して[新規]を選択。
 
 ##ネットワークアダプター1/2へのIPアドレスの設定とssh接続の確認
 
-`/etc/sysconfig/network-script/ifcfg-enp0s3`を編集
+`/etc/sysconfig/network-script/ifcfg-enp0s3`を編集    
 `ONBOOT=yes`に変更し保存
 
 ##SSH接続の確認
