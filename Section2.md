@@ -24,7 +24,7 @@
 
     php --version
 
-### '/etc/php-fpm.d/www.conf'を編集。以下を追加または、変更。
+### /etc/php-fpm.d/www.confを編集。以下を追加または、変更。
 
     listen = 127.0.0.9000
 
