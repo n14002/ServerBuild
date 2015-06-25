@@ -174,12 +174,12 @@ MariaDBにログイン出来ることを確認したら
 
     cp php.ini-development /usr/local/lib/php.ini
 
-### '/usr/local/lib/php.ini'の編集
+### /usr/local/lib/php.iniの編集
 
    mysql.default_socket = /var/lib/mysql/mysql.sock
 
 
-### '/usr/local/apache2/conf/httpd.conf'の編集
+### /usr/local/apache2/conf/httpd.conf の編集
 
     ServerName ユーザー名
 
@@ -245,7 +245,7 @@ MariaDBにログイン出来ることを確認したら
      
     mv wp-super-cache.1.4.4 /usr/local/apache2/htdocs/wordpress/wp-content/plugins/
 
-### '/usr/local/lib/php.ini'の編集
+### /usr/local/lib/php.ini の編集
 
     mysql.default_socket = /var/lib/mysql/mysql.sock
      
